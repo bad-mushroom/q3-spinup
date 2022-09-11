@@ -1,0 +1,79 @@
+version: '3.3'
+
+services:
+
+# Quake Server Instances ------------------------------------------------------
+#
+# You can run multiple instances of Quake 3; run two Deathmatch servers, or one
+# of each game type - it's up to you. Comment out or add sections as needed.
+#
+# Make sure to set the port value for each instance to be unique. 27960 is
+# Quake 3's default port.
+#
+
+# -- Deathmatch
+
+  quake3-dm:
+    container_name: quake3-dm
+    build:
+      context: ./build
+      dockerfile: ioquake3.dockerfile
+    ports:
+     - '27960:27960/udp'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+    volumes:
+      - './q3a-game/baseq3:/home/ioq3/.q3a/baseq3/'
+    command: "+set dedicated 2 +exec configs/dm_server.cfg"
+
+# -- Team Deathmatch
+
+  quake3-tdm:
+    container_name: quake3-tdm
+    build:
+      context: ./build
+      dockerfile: ioquake3.dockerfile
+    ports:
+     - '27961:27960/udp'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+    volumes:
+      - './q3a-game/baseq3:/home/ioq3/.q3a/baseq3/'
+    command: "+set dedicated 2 +exec configs/tdm_server.cfg"
+
+# -- CTF
+
+  quake3-ctf:
+    container_name: quake3-ctf
+    build:
+      context: ./build
+      dockerfile: ioquake3.dockerfile
+    ports:
+     - '27962:27960/udp'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+    volumes:
+      - './q3a-game/baseq3:/home/ioq3/.q3a/baseq3/'
+    command: "+set dedicated 2 +exec configs/ctf_server.cfg"
+
+# Master Server ---------------------------------------------------------------
+
+  dpmaster:
+    container_name: dpmaster
+    image: g0dzuki99/q3-spinup-dpmaster
+    ports:
+     - '27950:27950/udp'
+    restart: unless-stopped
+    command: "-f -v"
