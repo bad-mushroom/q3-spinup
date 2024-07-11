@@ -1,3 +1,6 @@
+<img width="640" alt="screenshot" src="https://github.com/bad-mushroom/q3-spinup/assets/381203/ed6fa4eb-a278-4049-a00b-a4b4c37efe0b">
+
+
 # Q3 Spinup
 
 Q3 Spinup is a simple way to run one or many Quake 3 servers without the need of installing and configuring Quake 3.
