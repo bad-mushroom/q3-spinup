@@ -25,7 +25,7 @@ There's a few things you'll need from the get go.
 
 ## Setup Instructions
 
-First step is to get this code on your server, or wherever you plan on hosting your Quake 3 server. The steps below will guide you through that process. These steps also assume a Linux environemnt but they should be simple enough to follow along with their Mac or Windows equivalents.
+First step is to get this code on your server, or wherever you plan on hosting your Quake 3 server. The steps below will guide you through that process. These steps also assume a Linux environment but they should be simple enough to follow along with their Mac or Windows equivalents.
 
 ### Download
 
@@ -61,6 +61,10 @@ command: "+set dedicated 2 +exec configs/my_new_server.cfg"
 ```
 
 At the very least, you'll want to change the `rconpassword` value to something other than the default "PASSWORD".
+
+## Environment
+
+The build script supports either ARM or x86 processors and it needs to be set in `build/ioquake3.dockerfile` before continuing. If you're on an x86 (most likely), you're all set - that's the default. For running on an M1 Mac or other ARM based system you'll need to uncomment the `ENTRYPOINT` line for M1 and comment out the Linux/x86 line.
 
 ## Spinup
 

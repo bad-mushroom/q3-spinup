@@ -19,7 +19,7 @@ USER ioq3
 EXPOSE 27960/udp
 
 # Mac M1
-ENTRYPOINT [ "/ioq3/build/release-linux-arm64/ioq3ded.arm64" ]
+#ENTRYPOINT [ "/ioq3/build/release-linux-arm64/ioq3ded.arm64" ]
 
 # Linux 64
-#ENTRYPOINT [ "/ioq3/build/release-linux-x86_64/ioq3ded.x86_64" ]
+ENTRYPOINT [ "/ioq3/build/release-linux-x86_64/ioq3ded.x86_64" ]
