@@ -60,9 +60,11 @@ sure to also update `docker-config.yml` so it knows what it's called:
 command: "+set dedicated 2 +exec configs/my_new_server.cfg"
 ```
 
+At the very least, you'll want to change the `rconpassword` value to something other than the default "PASSWORD".
+
 ## Spinup
 
-With your config files set to your liking and the `pak0.pk3` file in its place, you can fire up your quake instances.
+With your config files set to your liking and the `pak0.pk3` file in its place, you can fire up your Quake III instances.
 
 ```
 docker-compose up
@@ -144,7 +146,6 @@ docker-compose down
 docker-compose up -d
 ```
 
-
 ## Support the Project
 
 Show some ❤️ and [buy me a coffee](https://ko-fi.com/g0dzuki99) 😄
@@ -153,4 +154,4 @@ Show some ❤️ and [buy me a coffee](https://ko-fi.com/g0dzuki99) 😄
 <img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' />
 </a>
 
-You could also fix bugs, streamline the build, update documentation - pull requests are welcome!
+You could also fix bugs, streamline the build, update documentation - pull requests are always welcome!
